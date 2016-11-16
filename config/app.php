@@ -12,7 +12,8 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'City Park',
+    'name' => 'City Car Park',
+    'logo' => '/img/ccp_logo.png',
 
     /*
     |--------------------------------------------------------------------------

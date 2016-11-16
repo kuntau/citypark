@@ -14,6 +14,9 @@ require('laravel-elixir-vue-2');
  */
 
 elixir((mix) => {
-    mix.stylus('app.styl')
-       .webpack('app.js');
+	mix.stylus('app.styl')
+	.scripts([
+		'../../../node_modules/bootstrap-styl/js/dropdown.js'
+		])
+	.webpack('app.js');
 });

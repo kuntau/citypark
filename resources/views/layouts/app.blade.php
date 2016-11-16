@@ -36,7 +36,8 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name') }}
+                        <!-- {{ config('app.name') }} -->
+                        <img src="{{ config('app.logo') }}" />
                     </a>
                 </div>
 
@@ -46,6 +47,10 @@
                         &nbsp;
                     </ul>
 
+                   <ul class="nav navbar-nav">
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">History</a></li>
+                    </ul> 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
@@ -87,5 +92,6 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="/js/all.js"></script>
 </body>
 </html>
