@@ -17,7 +17,14 @@ require('bootstrap-styl');
  */
 
 window.Vue = require('vue');
-require('vue-resource');
+// require('vue-resource');
+var axios = require('axios')
+Vue.prototype.$http = axios
+
+axios.interceptors.request.use(request => {
+  request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken)
+  return request
+})
 
 /**
  * We'll register a HTTP interceptor to attach the "CSRF" header to each of
@@ -25,8 +32,8 @@ require('vue-resource');
  * included with Laravel will automatically verify the header's value.
  */
 
-Vue.http.interceptors.push((request, next) => {
-    request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
+// Vue.http.interceptors.push((request, next) => {
+//     request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
 
-    next();
-});
+//     next();
+// });
