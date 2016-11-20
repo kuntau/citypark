@@ -2,6 +2,7 @@ const elixir = require('laravel-elixir');
 const fs = require('fs')
 
 require('laravel-elixir-vue-2');
+require('laravel-elixir-livereload');
 
 /*
  |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ require('laravel-elixir-vue-2');
  |
  */
 
-elixir((mix) => {
+elixir(mix => {
 
 	// this code will make sure index.styl is available at one level above
 	// because of this weird bug with webpack 1
@@ -28,5 +29,10 @@ elixir((mix) => {
 	.scripts([
 		'../../../node_modules/bootstrap-styl/js/dropdown.js'
 		])
-	.webpack('app.js');
+	.webpack('app.js')
+	.livereload();
 });
+
+elixir(mix => {
+	// mix.livereload();
+})
