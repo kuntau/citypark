@@ -49,7 +49,8 @@
 
             <ul class="nav navbar-nav">
               <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
-              <li><a href="{{ url('/history') }}">History</a></li>
+              <li><a href="{{ url('/products') }}">Products</a></li>
+              <li><a href="{{ url('/history') }}">Purchase History</a></li>
             </ul> 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
@@ -65,7 +66,7 @@
 
                 <ul class="dropdown-menu" role="menu">
                   <li>
-                    <a href="{{ url('/profile') }}">Profile</a>
+                    <a href="/profile/{{ Auth::user()->id }}">Profile</a>
                   </li>
                   <li class="divider"></li>
                   <li>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+use App\User;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -16,9 +18,11 @@ class UsersController extends Controller
     return view('users.index');
   }
 
-  public function profile()
+  public function profile(User $user)
   {
-    return view('users.profile');
+    // return $user;
+    return view('users.profile', compact('user'));
+    // return view('users.profile')->with('user', $theUser->name);
   }
 
   public function create()

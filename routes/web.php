@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('home');
+  // return view('welcome');
 });
 
 Auth::routes();
@@ -20,6 +21,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', 'HomeController@index');
 
-Route::get('/profile', 'UserController@profile');
+Route::get('/profile/{user?}', 'UsersController@profile');
+Route::get('/users', 'UsersController@index');
 
 Route::get('/history', 'HistoryController@index');
+Route::get('/products', 'ProductsController@index');
