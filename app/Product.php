@@ -8,6 +8,6 @@ class Product extends Model
 {
     public function purchases()
     {
-      $this->belongsTo(Purchase::class);
+      return $this->belongsTo(Purchase::class);
     }
 }

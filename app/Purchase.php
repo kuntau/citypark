@@ -6,8 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Purchase extends Model
 {
-    public function users()
-    {
-      $this->belongsTo(User::class);
-    }
+  protected $fillable = [
+    'user_id',
+    'product_id',
+    'from_at',
+    'until_at',
+    'created_at',
+    'updated_at'
+  ];
+
+  public function users()
+  {
+    return $this->belongsTo(User::class);
+  }
 }
