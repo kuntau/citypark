@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                 @if (Auth::guest())
-                    Please log in to interact with your account!
+                    Please <a href="{{ url('/login') }}">log in</a> to interact with your account!
                 @else
                     You are logged in!
                 @endif

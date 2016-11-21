@@ -50,7 +50,8 @@
             <ul class="nav navbar-nav">
               <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
               <li><a href="{{ url('/products') }}">Products</a></li>
-              <li><a href="{{ url('/history') }}">Purchase History</a></li>
+              <li><a href="/purchases">Purchase History</a></li>
+              <li><a href="/purchases/{user}">Purchases History</a></li>
             </ul> 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
@@ -94,5 +95,12 @@
   <!-- Scripts -->
   <script src="/js/app.js"></script>
   <script src="/js/all.js"></script>
+
+  <!-- Dev livereload -->
+  @if ( Config::get('app.debug') )
+  <script type="text/javascript">
+    document.write('<script src="//localhost:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
+  </script>
+  @endif
 </body>
 </html>

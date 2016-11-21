@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use DB;
+use App\Product;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
-    public function index()
+    public function index(Product $id)
     {
-      $products = DB::table('products')->get();
-      return $products;
+      if ($id->exists) {
+        return $id;
+        $products = Product::where('id', $id)->get();
+      }
+      return Product::all();
     }
 }

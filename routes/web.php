@@ -24,5 +24,5 @@ Route::get('/dashboard', 'HomeController@index');
 Route::get('/profile/{user?}', 'UsersController@profile');
 Route::get('/users', 'UsersController@index');
 
-Route::get('/history', 'HistoryController@index');
-Route::get('/products', 'ProductsController@index');
+Route::get('/products/{id?}', 'ProductsController@index');
+Route::get('/purchases/{user?}', 'PurchasesController@index');

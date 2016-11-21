@@ -1,0 +1,8 @@
+id,name,email,password,remember_token,created_at,updated_at
+1,Kuntau,kuntau17@gmail.com,$2y$10$tOQPVmpOW.4rwjueBoHSQu2awZsRLWupElZjCOC9RWRCl3PaI3hHu,X6IAHqZDfx0zaIuNxzQz2DzkzT0545Hm6UjsvwuxgssM4I19jGq0NRk18sGh,2016-11-19 08:06:32,2016-11-20 14:41:24
+2,Nizam,nizam@kuntau.org,$2y$10$tOQPVmpOW.4rwjueBoHSQu2awZsRLWupElZjCOC9RWRCl3PaI3hHu,EgAp5r7348Tv20LdGCQKTgQxmD8GwwFrXIdlqve1UBz80q5wvsrCsChuuZ3O,2016-11-19 15:14:28,2016-11-19 15:14:28
+3,James,james@kuntau.org,$2y$10$tOQPVmpOW.4rwjueBoHSQu2awZsRLWupElZjCOC9RWRCl3PaI3hHu,EgAp5r7348Tv20LdGCQKTgQxmD8GwwFrXIdlqve1UBz80q5wvsrCsChuuZ3O,2016-11-19 15:14:47,2016-11-19 15:14:47
+4,Tomasa Ledner,istroman@example.net,$2y$10$FYqEvWGg5MISo2Nah7Qp.eOByL.kECgf4rGkKvNaHR8tysUG6FcE6,bJctwLp1J8U1mJVoooVMYMeCCeZrqyZuVSadGOMCBPfnDd4cOq5zWBk9h8dg,2016-11-20 14:39:40,2016-11-20 14:41:44
+5,Kiarra Gleichner,collins.vivien@example.org,$2y$10$FYqEvWGg5MISo2Nah7Qp.eOByL.kECgf4rGkKvNaHR8tysUG6FcE6,wQP48yRxoQ,2016-11-20 14:39:40,2016-11-20 14:39:40
+6,Leonora Bartoletti,ena.gleichner@example.com,$2y$10$HR3dh9gUnb/dcExrQrkK3uOovx.b0sSV2j1NtIR9UJS.Cdy94g1rG,4LW1SEe80p,2016-11-20 14:42:14,2016-11-20 14:42:14
+7,Marcos Miller,ischumm@example.org,$2y$10$HR3dh9gUnb/dcExrQrkK3uOovx.b0sSV2j1NtIR9UJS.Cdy94g1rG,fZcGXsJ0eP,2016-11-20 14:42:14,2016-11-20 14:42:14
