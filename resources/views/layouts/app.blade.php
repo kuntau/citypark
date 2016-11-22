@@ -50,7 +50,9 @@
             <ul class="nav navbar-nav">
               <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
               <li><a href="{{ url('/products') }}">Products</a></li>
+              @if (Auth::user())
               <li><a href="/purchases/{{ Auth::user()->id }}">Purchase History</a></li>
+              @endif
             </ul> 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
