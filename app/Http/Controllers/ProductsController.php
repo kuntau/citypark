@@ -11,8 +11,10 @@ class ProductsController extends Controller
     {
       if ($id->exists) {
         return $id;
-        $products = Product::where('id', $id)->get();
       }
-      return Product::all();
+      $products = Product::all();
+      return view('products', compact('products'));
+      return view('products')->with('products', $products);
+      return $products;
     }
 }

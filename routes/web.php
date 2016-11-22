@@ -25,4 +25,7 @@ Route::get('/profile/{user?}', 'UsersController@profile');
 Route::get('/users', 'UsersController@index');
 
 Route::get('/products/{id?}', 'ProductsController@index');
-Route::get('/purchases/{user?}', 'PurchasesController@index');
+
+Route::get('/purchase/{product?}', 'PurchasesController@purchase');
+
+Route::get('/history/{user?}', 'PurchasesController@history');

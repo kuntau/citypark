@@ -27,7 +27,8 @@ elixir(mix => {
 
   mix.stylus('app.styl')
   .scripts([
-    '../../../node_modules/bootstrap-styl/js/dropdown.js'
+    '../../../node_modules/bootstrap-styl/js/dropdown.js',
+    '../../../node_modules/bootstrap-styl/js/collapse.js'
     ])
   .webpack('app.js')
   .livereload();
