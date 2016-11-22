@@ -53,7 +53,7 @@
               @if (Auth::user())
               <li><a href="/purchases/{{ Auth::user()->id }}">Purchase History</a></li>
               @endif
-            </ul> 
+            </ul>
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
               <!-- Authentication Links -->
