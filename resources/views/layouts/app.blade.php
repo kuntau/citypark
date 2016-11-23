@@ -106,8 +106,9 @@
       from = $( "#from" )
         .datepicker({
           defaultDate: "+1w",
+          setDate: new Date().toString(),
           changeMonth: true,
-          changeYear: true,
+          changeYear: false,
           minDate: 0,
           dateFormat: dateFormat,
           numberOfMonths: 1
@@ -120,7 +121,7 @@
       .datepicker({
         defaultDate: "+1w",
         changeMonth: true,
-        changeYear: true,
+        changeYear: false,
         minDate: 0,
         dateFormat: dateFormat,
         numberOfMonths: 1
@@ -129,7 +130,7 @@
         from.datepicker( "option", "maxDate", getDate( this ) );
         getDays();
       });
- 
+
     function getDate( element ) {
       var date;
       try { date = $.datepicker.parseDate( dateFormat, element.value );

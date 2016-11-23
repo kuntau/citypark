@@ -26,6 +26,7 @@ Route::get('/users', 'UsersController@index');
 
 Route::get('/products/{id?}', 'ProductsController@index');
 
+Route::post('/purchase', 'PurchasesController@store');
 Route::get('/purchase/{product?}', 'PurchasesController@purchase');
 
 Route::get('/history/{user?}', 'PurchasesController@history');

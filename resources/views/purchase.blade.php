@@ -9,7 +9,10 @@
       <div class="panel panel-default">
         <!-- <div class="panel-heading">Purchase</div> -->
         <div class="panel-body">
-          <form action="POST">
+          <form method="POST" action="{{ url('/purchase') }}">
+            {{ csrf_field() }}
+            <input type="hidden" name="product_id" value="{{ $product->id }}">
+            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
             <div class="form-group">
               <label for="">Product</label>
               <input type="text" class="form-control" value="{{ $product->title }}" disabled="">
@@ -18,17 +21,17 @@
               <label for="productPrice">Price</label>
               <div class="input-group">
                 <div class="input-group-addon">RM</div>
-                <input type="text" id="productPrice" class="form-control" value="{{ $product->price }}" readonly>
+                <input type="text" id="productPrice" name="productPrice" class="form-control" value="{{ $product->price }}" readonly>
               </div>
             </div>
             <div class="form-group">
               <label for="">Duration</label>
               <div class="row">
                 <div class="col-sm-6">
-                  <input type="text" class="form-control" id="from" name="from" placeholder="Start date">
+                  <input type="text" class="form-control" id="from" name="from_at" placeholder="Start date" value="{{ date('d/m/Y') }}">
                 </div>
                 <div class="col-sm-6">
-                  <input type="text" class="form-control" id="to" name="to" placeholder="End date">
+                  <input type="text" class="form-control" id="to" name="until_at" placeholder="End date" value="{{ date('d/m/Y') }}">
                 </div>
               </div>
             </div>
@@ -39,7 +42,7 @@
                 <div class="col-sm-3">
                   <div class="input-group">
                     <div class="input-group-addon">RM</div>
-                    <input type="text" id="totalPrice" class="form-control" value="{{ $product->price }}" readonly>
+                    <input type="text" id="totalPrice" name="totalPrice" class="form-control" value="{{ $product->price }}" readonly>
                   </div>
                 </div>
               </div>
