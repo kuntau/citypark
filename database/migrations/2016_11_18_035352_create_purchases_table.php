@@ -15,9 +15,13 @@ class CreatePurchasesTable extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('quantity');
             $table->integer('user_id')->unsigned()->index();
             $table->integer('product_id')->unsigned()->index();
+            $table->integer('quantity');
+            $table->integer('total_price');
+            $table->boolean('paid')->default(false);
+            $table->boolean('verified')->default(false);
+            $table->string('proof')->nullable();
             $table->date('from_at');
             $table->date('until_at');
             $table->timestamps();
