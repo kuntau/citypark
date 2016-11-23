@@ -101,37 +101,47 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script>
   $( function() {
-    var dateFormat = "mm/dd/yy",
+    var dateFormat = "dd/mm/yy",
+    productPrice = $('#productPrice').val();
       from = $( "#from" )
         .datepicker({
           defaultDate: "+1w",
           changeMonth: true,
           changeYear: true,
           minDate: 0,
+          dateFormat: dateFormat,
           numberOfMonths: 1
         })
         .on( "change", function() {
           to.datepicker( "option", "minDate", getDate( this ) );
+          getDays();
         }),
-      to = $( "#to" ).datepicker({
+    to = $( "#to" )
+      .datepicker({
         defaultDate: "+1w",
         changeMonth: true,
         changeYear: true,
+        minDate: 0,
+        dateFormat: dateFormat,
         numberOfMonths: 1
       })
       .on( "change", function() {
         from.datepicker( "option", "maxDate", getDate( this ) );
+        getDays();
       });
  
     function getDate( element ) {
       var date;
-      try {
-        date = $.datepicker.parseDate( dateFormat, element.value );
-      } catch( error ) {
-        date = null;
-      }
- 
+      try { date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) { date = null; }
       return date;
+    }
+
+    function getDays() {
+      var days = Math.ceil( ($('#to').datepicker('getDate') - $('#from').datepicker('getDate')) / (1000 * 60 * 60 * 24));
+      days = (days > 0 ? days + 1 : 1);
+      console.log(days);
+      $('#totalPrice').val(productPrice * days);
     }
   } );
   </script>

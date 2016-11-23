@@ -15,8 +15,11 @@
               <input type="text" class="form-control" value="{{ $product->title }}" disabled="">
             </div>
             <div class="form-group">
-              <label for="">Price</label>
-              <input type="text" class="form-control" value="RM{{ $product->price }}" disabled="">
+              <label for="productPrice">Price</label>
+              <div class="input-group">
+                <div class="input-group-addon">RM</div>
+                <input type="text" id="productPrice" class="form-control" value="{{ $product->price }}" readonly>
+              </div>
             </div>
             <div class="form-group">
               <label for="">Duration</label>
@@ -31,10 +34,13 @@
             </div>
             <hr />
             <div class="form-group">
-              <label for="">Total @{{ 1 + 1 }}</label>
+              <label for="">Total</label>
               <div class="row">
                 <div class="col-sm-3">
-                  <input type="text" class="form-control" value="RM{{ $product->price * 3 }}" disabled="">
+                  <div class="input-group">
+                    <div class="input-group-addon">RM</div>
+                    <input type="text" id="totalPrice" class="form-control" value="{{ $product->price }}" readonly>
+                  </div>
                 </div>
               </div>
             </div>
