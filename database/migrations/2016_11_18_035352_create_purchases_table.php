@@ -21,9 +21,10 @@ class CreatePurchasesTable extends Migration
             $table->integer('total_price');
             $table->boolean('paid')->default(false);
             $table->boolean('verified')->default(false);
-            $table->string('proof')->nullable();
             $table->date('from_at');
             $table->date('until_at');
+            $table->text('remark')->nullable();
+            $table->string('proof')->nullable();
             $table->timestamps();
         });
     }
