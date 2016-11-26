@@ -17,8 +17,8 @@
   <script>
     window.Laravel = <?php echo json_encode([
       'csrfToken' => csrf_token(),
-      ]); ?>
-    </script>
+    ]); ?>
+  </script>
   </head>
   <body>
     <div id="app">
@@ -51,6 +51,7 @@
               <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
               <li><a href="{{ url('/products') }}">Products</a></li>
               @if (Auth::user())
+              <li><a href="{{ url('/purchase/1') }}">Purchase</a></li>
               <li><a href="{{ url('/history', Auth::user()->id) }}">Purchase History</a></li>
               <!-- <li><a href="/purchases/{{ Auth::user()->id }}">Purchase History</a></li> -->
               @endif
@@ -98,7 +99,25 @@
   <script src="/js/app.js"></script>
   <script src="/js/all.js"></script>
   @if (Request::is('purchase/*'))
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+  <script>
+    $(function() {
+      var dateFormat = "dd/mm/yy",
+          productPrice = $('#productPrice').val(),
+          start = $('#start').on('change', function() {
+
+          })
+    })
+    $('#datepicker').datepicker({
+      format: "dd/mm/yy",
+      weekStart: 1,
+      todayBtn: "linked",
+      autoclose: true,
+      todayHighlight: true,
+      startDate: '0',
+      endDate: '+30d',
+    })
+  </script>
   <script>
   $( function() {
     var dateFormat = "dd/mm/yy",

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.min.css">
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
@@ -26,13 +26,10 @@
             </div>
             <div class="form-group">
               <label for="">Duration</label>
-              <div class="row">
-                <div class="col-sm-6">
-                  <input type="text" class="form-control" id="from" name="from_at" placeholder="Start date" value="{{ date('d/m/Y') }}">
-                </div>
-                <div class="col-sm-6">
-                  <input type="text" class="form-control" id="to" name="until_at" placeholder="End date" value="{{ date('d/m/Y') }}">
-                </div>
+              <div id="datepicker" class="input-daterange input-group">
+                <input class="input-sm form-control" type="text" id="start" />
+                <span class="input-group-addon">To</span>
+                <input class="input-sm form-control" type="text" id="end">
               </div>
             </div>
             <hr />
