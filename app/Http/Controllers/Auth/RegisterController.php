@@ -50,6 +50,10 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
+            'company-name' => 'required|max:255',
+            'company-address' => 'required|max:255',
+            'phoneOffice' => 'required|max:15',
+            'phoneCell' => 'required|max:15',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -65,6 +69,10 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'company_name' => $data['company-name'],
+            'company_address' => $data['company-address'],
+            'phone_office' => $data['phoneOffice'],
+            'phone_cell' => $data['phoneCell'],
             'password' => bcrypt($data['password']),
         ]);
     }
