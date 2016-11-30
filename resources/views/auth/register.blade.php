@@ -38,6 +38,66 @@
                             </div>
                         </div>
 
+                        <hr>
+
+                        <div class="form-group{{ $errors->has('company-name') ? ' has-error' : '' }}">
+                            <label for="company-name" class="col-md-4 control-label">Company Name</label>
+
+                            <div class="col-md-6">
+                                <input id="company-name" type="text" class="form-control" name="company-name" required>
+
+                                @if ($errors->has('company-name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('company-name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('company-address') ? ' has-error' : '' }}">
+                            <label for="company-address" class="col-md-4 control-label">Company Address</label>
+
+                            <div class="col-md-6">
+                              <textarea id="company-address" class="form-control" name="company-address" required></textarea>
+
+                                @if ($errors->has('company-address'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('company-address') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('phoneOffice') ? ' has-error' : '' }}">
+                            <label for="phoneOffice" class="col-md-4 control-label">Telephone No. (Office)</label>
+
+                            <div class="col-md-6">
+                                <input id="phoneOffice" type="text" class="form-control" name="phoneOffice" required>
+
+                                @if ($errors->has('phoneOffice'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('phoneOffice') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('phoneCell') ? ' has-error' : '' }}">
+                            <label for="phoneCell" class="col-md-4 control-label">Telephone No. (HP)</label>
+
+                            <div class="col-md-6">
+                                <input id="phoneCell" type="text" class="form-control" name="phoneCell" required>
+
+                                @if ($errors->has('phoneCell'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('phoneCell') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <hr>
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
