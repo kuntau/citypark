@@ -5,15 +5,15 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h2>Purchase</h2>
-      <div class="panel panel-default">
-        <!-- <div class="panel-heading">Purchase</div> -->
-        <div class="panel-body">
+      <h2>Purchase Form</h2>
           <form method="POST" action="{{ url('/purchase') }}" class="form form-horizontal">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4>Customer Details</h4></div>
+        <div class="panel-body">
             {{ csrf_field() }}
             <input type="hidden" name="product_id" value="{{ $product->id }}">
             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-            <div class="form-group row">
+            <div class="form-group">
               <label for="product-title" class="control-label col-xs-2">Product</label>
               <div class="col-xs-10">
                 <input id="product-title" name="product-title" type="text" class="form-control" value="{{ $product->title }}" disabled>
@@ -70,6 +70,12 @@
             </div>
 
             <hr />
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4>Customer Details</h4></div>
+        <div class="panel-body">
+
             <div class="form-group">
               <label for="total-price" class="control-label col-xs-2">Total</label>
               <div class="col-sm-3">
@@ -80,11 +86,13 @@
               </div>
             </div>
             <div class="form-group">
-              <button class="btn btn-primary">Purchase</button>
+              <div class="col-xs-2 col-xs-offset-2">
+                <button class="btn btn-primary">Purchase</button>
+              </div>
             </div>
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
           </form>
-        </div>
-      </div>
     </div>
   </div>
 </div>

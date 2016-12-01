@@ -121,7 +121,7 @@
         var days = Math.ceil( ($('#end').datepicker('getDate') - $('#start').datepicker('getDate')) / (1000 * 60 * 60 * 24));
 
         days = (days > 0 ? days + 1 : 1); // set minimum day to 1
-        $('#totalPrice').val(_.round(productPrice * days, 2));
+        $('#total-price').val(_.round(productPrice * days, 2));
       }
     })
   </script>
