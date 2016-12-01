@@ -18,10 +18,10 @@
               <input type="text" class="form-control" value="{{ $product->title }}" disabled="">
             </div>
             <div class="form-group">
-              <label for="productPrice">Price</label>
+              <label for="product-price">Price</label>
               <div class="input-group">
                 <div class="input-group-addon">RM</div>
-                <input type="text" id="productPrice" name="productPrice" class="form-control" value="{{ $product->price }}" readonly>
+                <input type="text" id="product-price" name="product-price" class="form-control" value="{{ $product->price }}" readonly>
               </div>
             </div>
             <div class="form-group">
