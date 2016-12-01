@@ -103,67 +103,27 @@
   <script>
     $(function() {
       var dateFormat = "dd/mm/yy",
-          productPrice = $('#productPrice').val(),
-          start = $('#start').on('change', function() {
+          productPrice = $('#product-price').val();
 
-          })
-    })
-    $('#datepicker').datepicker({
-      format: "dd/mm/yy",
-      weekStart: 1,
-      todayBtn: "linked",
-      autoclose: true,
-      todayHighlight: true,
-      startDate: '0',
-      endDate: '+30d',
-    })
-  </script>
-  <script>
-  $( function() {
-    var dateFormat = "dd/mm/yy",
-    productPrice = $('#productPrice').val();
-      from = $( "#from" )
-        .datepicker({
-          defaultDate: "+1w",
-          setDate: new Date().toString(),
-          changeMonth: true,
-          changeYear: false,
-          minDate: 0,
-          dateFormat: dateFormat,
-          numberOfMonths: 1
-        })
-        .on( "change", function() {
-          to.datepicker( "option", "minDate", getDate( this ) );
-          getDays();
-        }),
-    to = $( "#to" )
-      .datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        changeYear: false,
-        minDate: 0,
-        dateFormat: dateFormat,
-        numberOfMonths: 1
+      $('#datepicker').datepicker({
+        format: "dd/mm/yy",
+        weekStart: 1,
+        todayBtn: "linked",
+        autoclose: true,
+        todayHighlight: true,
+        startDate: '0',
+        endDate: '+30d',
+      }).on('change', function() {
+        calcDays();
       })
-      .on( "change", function() {
-        from.datepicker( "option", "maxDate", getDate( this ) );
-        getDays();
-      });
 
-    function getDate( element ) {
-      var date;
-      try { date = $.datepicker.parseDate( dateFormat, element.value );
-      } catch( error ) { date = null; }
-      return date;
-    }
+      function calcDays() {
+        var days = Math.ceil( ($('#end').datepicker('getDate') - $('#start').datepicker('getDate')) / (1000 * 60 * 60 * 24));
 
-    function getDays() {
-      var days = Math.ceil( ($('#to').datepicker('getDate') - $('#from').datepicker('getDate')) / (1000 * 60 * 60 * 24));
-      days = (days > 0 ? days + 1 : 1);
-      console.log(days);
-      $('#totalPrice').val(productPrice * days);
-    }
-  } );
+        days = (days > 0 ? days + 1 : 1); // set minimum day to 1
+        $('#totalPrice').val(_.round(productPrice * days, 2));
+      }
+    })
   </script>
   @endif
 
