@@ -11,24 +11,7 @@
         <div class="panel-heading"><h4>Customer Details</h4></div>
         <div class="panel-body">
             {{ csrf_field() }}
-            <input type="hidden" name="product_id" value="{{ $product->id }}">
             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-            <div class="form-group">
-              <label for="product-title" class="control-label col-xs-2">Product</label>
-              <div class="col-xs-10">
-                <input id="product-title" name="product-title" type="text" class="form-control" value="{{ $product->title }}" disabled>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="product-price" class="control-label col-xs-2">Price</label>
-              <div class="col-xs-10">
-                <div class="input-group">
-                  <div class="input-group-addon">RM</div>
-                  <input type="text" id="product-price" name="product-price" class="form-control" value="{{ $product->price }}" readonly>
-                </div>
-              </div>
-            </div>
 
             <div class="form-group">
               <label for="user-name" class="control-label col-xs-2">Name</label>
@@ -58,8 +41,59 @@
               </div>
             </div>
 
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
+
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4>Rental Details</h4></div>
+        <div class="panel-body">
+
+            <input type="hidden" name="product_id" value="{{ $product->id }}">
             <div class="form-group">
-              <label for="datepicker" class="control-label col-xs-2">Duration</label>
+              <label for="product-title" class="control-label col-xs-2">Product</label>
+              <div class="col-xs-10">
+                <input id="product-title" name="product-title" type="text" class="form-control" value="{{ $product->title }}" disabled>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="product-price" class="control-label col-xs-2">Rate</label>
+              <div class="col-xs-10">
+                <div class="input-group">
+                  <div class="input-group-addon">RM</div>
+                  <input type="text" id="product-price" name="product-price" class="form-control" value="{{ $product->price }}" readonly>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="purchase-purpose" class="control-label col-xs-2">Purpose</label>
+              <div class="col-xs-10">
+                <select id="purchase-purpose" name="purchase-purpose" class="form-control">
+                  <option value="">Promotion Booth</option>
+                  <option value="">Religious Activity</option>
+                  <option value="">Dumpster</option>
+                  <option value="">Something else</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="user-email" class="control-label col-xs-2">Location</label>
+              <div class="col-xs-10">
+                <input id="user-email" name="user-email" type="text" class="form-control" >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="user-email" class="control-label col-xs-2">No. of Lot</label>
+              <div class="col-xs-10">
+                <input id="user-email" name="user-email" type="text" class="form-control" >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="datepicker" class="control-label col-xs-2">Date</label>
               <div class="col-xs-10">
                 <div id="datepicker" class="input-daterange input-group">
                   <input class="input-sm form-control" type="text" id="start" />
@@ -68,13 +102,6 @@
                 </div>
               </div>
             </div>
-
-            <hr />
-        </div> <!-- end panel body -->
-      </div> <!-- end panel -->
-      <div class="panel panel-default">
-        <div class="panel-heading"><h4>Customer Details</h4></div>
-        <div class="panel-body">
 
             <div class="form-group">
               <label for="total-price" class="control-label col-xs-2">Total</label>
