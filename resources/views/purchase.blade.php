@@ -16,39 +16,39 @@
             <div class="form-group">
               <label for="user-name" class="control-label col-xs-3">Name</label>
               <div class="col-xs-9">
-                <input id="user-name" name="user-name" type="text" class="form-control" value="{{ Auth::user()->name }}">
+                <input id="user-name" name="user-name" type="text" class="form-control" value="{{ Auth::user()->name }}" readonly>
               </div>
             </div>
 
             <div class="form-group">
               <label for="user-company-name" class="control-label col-xs-3">Company Name</label>
               <div class="col-xs-9">
-                <input id="user-company-name" name="user-company-name" type="text" class="form-control" value="{{ Auth::user()->company_name }}">
+                <input id="user-company-name" name="user-company-name" type="text" class="form-control" value="{{ Auth::user()->company_name }}" readonly>
               </div>
             </div>
 
             <div class="form-group">
               <label for="user-company-address" class="control-label col-xs-3">Company Address</label>
               <div class="col-xs-9">
-                <textarea id="user-company-address" rows="4" name="user-company-address" type="text" class="form-control">{{ Auth::user()->company_address }}</textarea>
+                <textarea id="user-company-address" rows="4" name="user-company-address" type="text" class="form-control" readonly>{{ Auth::user()->company_address }}</textarea>
               </div>
             </div>
 
             <div class="form-group">
               <label for="user-email" class="control-label col-xs-3">E-Mail</label>
               <div class="col-xs-9">
-                <input id="user-email" name="user-email" type="text" class="form-control" value="{{ Auth::user()->email }}">
+                <input id="user-email" name="user-email" type="text" class="form-control" value="{{ Auth::user()->email }}" readonly>
               </div>
             </div>
 
             <div class="form-group">
               <label for="user-phone-cell" class="control-label col-xs-3">Telephone (HP)</label>
               <div class="col-xs-3">
-                <input id="user-phone-cell" name="user-phone-cell" type="text" class="form-control" value="{{ Auth::user()->phone_cell }}">
+                <input id="user-phone-cell" name="user-phone-cell" type="text" class="form-control" value="{{ Auth::user()->phone_cell }}" readonly>
               </div>
               <label for="user-phone-office" class="control-label col-xs-3">Telephone (Office)</label>
               <div class="col-xs-3">
-                <input id="user-phone-office" name="user-phone-office" type="text" class="form-control" value="{{ Auth::user()->phone_office }}">
+                <input id="user-phone-office" name="user-phone-office" type="text" class="form-control" value="{{ Auth::user()->phone_office }}" readonly>
               </div>
             </div>
 
@@ -64,7 +64,6 @@
           <form method="POST" action="{{ url('/purchase') }}" class="form-horizontal">
             {{ csrf_field() }}
             <input type="hidden" name="product_id" value="{{ $product->id }}">
-            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
             <div class="form-group">
               <label for="product-title" class="control-label col-xs-2">Product</label>
               <div class="col-xs-10">
@@ -86,10 +85,10 @@
               <label for="purchase-purpose" class="control-label col-xs-2">Purpose</label>
               <div class="col-xs-10">
                 <select id="purchase-purpose" name="purchase-purpose" class="form-control">
-                  <option value="">Promotion Booth</option>
-                  <option value="">Religious Activity</option>
-                  <option value="">Dumpster</option>
-                  <option value="">Something else</option>
+                  <option value="Promotion Booth">Promotion Booth</option>
+                  <option value="Religious Activity">Religious Activity</option>
+                  <option value="Dumpster">Dumpster</option>
+                  <option value="Something else">Something else</option>
                 </select>
               </div>
             </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 // use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Purchase;
 use App\Product;
@@ -33,7 +34,7 @@ class PurchasesController extends Controller
       $request = Request::all();
 
       $product = Product::findOrFail($request['product_id']);
-      $user = User::findOrFail($request['user_id']);
+      $user = Auth::user();
 
       // prepare the data for purchase collection
       $from_at = Carbon::createFromFormat('d/m/Y', $request['start']);
