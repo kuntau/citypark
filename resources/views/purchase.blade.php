@@ -96,7 +96,7 @@
             <div class="form-group">
               <label for="purchase-location" class="control-label col-xs-2">Location</label>
               <div class="col-xs-10">
-                <input id="purchase-location" name="purchase-location" type="text" class="form-control" required autofocu>
+                <input id="purchase-location" name="purchase-location" type="text" class="form-control" required autofocus>
               </div>
             </div>
 
