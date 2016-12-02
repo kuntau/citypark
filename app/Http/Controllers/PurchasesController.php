@@ -31,19 +31,30 @@ class PurchasesController extends Controller
 
     public function store() {
       $request = Request::all();
+
       $product = Product::findOrFail($request['product_id']);
       $user = User::findOrFail($request['user_id']);
-      $from_at = Carbon::createFromFormat('d/m/Y', $request['from_at']);
-      $until_at = Carbon::createFromFormat('d/m/Y', $request['until_at']);
+
+      // prepare the data for purchase collection
+      $from_at = Carbon::createFromFormat('d/m/Y', $request['start']);
+      $until_at = Carbon::createFromFormat('d/m/Y', $request['end']);
       $diff = $until_at->diffInDays($from_at);
       $total_price = ($diff + 1) * $product->price;
+
+      // create new purchase collection
       $purchase = new Purchase;
       $purchase->product_id = $product->id;
-      $purchase->quantity = 1;
-      // $purchase->user_id = $user->id;
-      $purchase->total_price = $total_price;
+      $purchase->price = $total_price;
+
+      // purchase application details
+      $purchase->purpose = $request['purchase-purpose'];
+      $purchase->location = $request['purchase-location'];
+      $purchase->quantity_lot = $request['purchase-quantity-lot'];
       $purchase->from_at = $from_at->toDateString();
       $purchase->until_at = $until_at->toDateString();
+      $purchase->duration = ($diff + 1);
+
+      // save the purchase
       $user->purchases()->save($purchase);
       return redirect()->action('PurchasesController@history', [$user]);
     }
