@@ -5,10 +5,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h2>Purchase Form</h2>
-          <form method="POST" action="{{ url('/purchase') }}" class="form form-horizontal">
-      <div class="panel panel-default">
-        <div class="panel-heading"><h4>Customer Details</h4></div>
+      <h2>Application Form</h2>
+          <form method="POST" action="{{ url('/purchase') }}" class="form-horizontal">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <div class="panel-title">Customer Details</div>
+        </div>
         <div class="panel-body">
             {{ csrf_field() }}
             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
@@ -41,11 +43,24 @@
               </div>
             </div>
 
+            <div class="form-group">
+              <label for="user-phone-cell" class="control-label col-xs-2">Telephone (HP)</label>
+              <div class="col-xs-4">
+                <input id="user-phone-cell" name="user-phone-cell" type="text" class="form-control" value="{{ Auth::user()->phone_cell }}">
+              </div>
+              <label for="user-phone-office" class="control-label col-xs-2">Telephone (Office)</label>
+              <div class="col-xs-4">
+                <input id="user-phone-office" name="user-phone-office" type="text" class="form-control" value="{{ Auth::user()->phone_office }}">
+              </div>
+            </div>
+
         </div> <!-- end panel body -->
       </div> <!-- end panel -->
 
-      <div class="panel panel-default">
-        <div class="panel-heading"><h4>Rental Details</h4></div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title">Rental Details</div>
+        </div>
         <div class="panel-body">
 
             <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -97,7 +112,7 @@
               <div class="col-xs-10">
                 <div id="datepicker" class="input-daterange input-group">
                   <input class="input-sm form-control" type="text" id="start" />
-                  <span class="input-group-addon">To</span>
+                  <span class="input-group-addon">~</span>
                   <input class="input-sm form-control" type="text" id="end">
                 </div>
               </div>
@@ -114,7 +129,7 @@
             </div>
             <div class="form-group">
               <div class="col-xs-2 col-xs-offset-2">
-                <button class="btn btn-primary">Purchase</button>
+                <button class="btn btn-primary">Submit Application</button>
               </div>
             </div>
         </div> <!-- end panel body -->
