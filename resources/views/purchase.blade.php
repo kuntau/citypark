@@ -95,16 +95,16 @@
             </div>
 
             <div class="form-group">
-              <label for="user-email" class="control-label col-xs-2">Location</label>
+              <label for="purchase-location" class="control-label col-xs-2">Location</label>
               <div class="col-xs-10">
-                <input id="user-email" name="user-email" type="text" class="form-control" >
+                <input id="purchase-location" name="purchase-location" type="text" class="form-control" required>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="user-email" class="control-label col-xs-2">No. of Lot</label>
+              <label for="purchase-quantity-lot" class="control-label col-xs-2">No. of Lot</label>
               <div class="col-xs-10">
-                <input id="user-email" name="user-email" type="text" class="form-control" >
+                <input id="purchase-quantity-lot" name="purchase-quantity-lot" type="text" class="form-control" required>
               </div>
             </div>
 
@@ -112,9 +112,9 @@
               <label for="datepicker" class="control-label col-xs-2">Date</label>
               <div class="col-xs-10">
                 <div id="datepicker" class="input-daterange input-group">
-                  <input class="input-sm form-control" type="text" id="start" />
+                  <input class="input-sm form-control" type="text" name="start" id="start" required>
                   <span class="input-group-addon">~</span>
-                  <input class="input-sm form-control" type="text" id="end">
+                  <input class="input-sm form-control" type="text" name="end" id="end" required>
                 </div>
               </div>
             </div>
