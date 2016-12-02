@@ -30,6 +30,7 @@ elixir(mix => {
     '../../../node_modules/bootstrap-styl/js/dropdown.js',
     '../../../node_modules/bootstrap-styl/js/collapse.js'
     ])
+  .scripts(['purchase.js'], 'public/js/purchase.js')
   .webpack('app.js')
   .livereload();
 });
