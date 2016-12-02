@@ -99,33 +99,8 @@
   <script src="/js/app.js"></script>
   <script src="/js/all.js"></script>
   @if (Request::is('purchase/*'))
-  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
-  <script>
-    $(function() {
-      var dateFormat = "dd/mm/yy",
-          productPrice = $('#product-price').val();
-
-      $('#datepicker').datepicker({
-        format: "dd/mm/yy",
-        weekStart: 1,
-        todayBtn: "linked",
-        autoclose: true,
-        todayHighlight: true,
-        startDate: '0',
-        endDate: '+30d',
-      }).on('change', function() {
-        calcDays();
-      })
-
-      function calcDays() {
-        var days = Math.ceil( ($('#end').datepicker('getDate') - $('#start').datepicker('getDate')) / (1000 * 60 * 60 * 24));
-
-        days = (days > 0 ? days + 1 : 1); // set minimum day to 1
-        $('#total-price').val(_.round(productPrice * days, 2));
-      }
-    })
-  </script>
   @endif
+  @yield('extrajs')
 
   <!-- Dev livereload -->
   @if ( Config::get('app.debug') )

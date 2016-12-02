@@ -7,29 +7,54 @@
       <div class="panel panel-default">
         <div class="panel-heading">Profile</div>
         <div class="panel-body">
-          <form action="#" class="from-horizontal">
+          <form class="form-horizontal">
+
             <div class="form-group">
-              <label for="" class="control-label">Name</label>
-              <input type="text" class="form-control" value="{{ $user->name }}" readonly>
-            </div>
-            <div class="form-group">
-              <label for="" class="control-label">E-mail</label>
-              <input type="text" class="form-control" value="{{ $user->email }}" readonly>
-            </div>
-            <div class="form-group">
-              <label for="" class="control-label">Company</label>
-              <input type="text" class="form-control" value="{{ $user->company_name }}" readonly>
-            </div>
-            <div class="form-group">
-              <label for="" class="control-label">Company Address</label>
-              <textarea class="form-control" row="3" readonly>{{ $user->company_address }}</textarea>
-            </div>
-            @if (isset($user->phone_office))
-              <div class="form-group">
-                <label for="" class="control-label">Phone (Office)</label>
-                <input type="text" class="form-control" value="{{ $user->phone_office }}" readonly>
+              <label for="user-name" class="control-label col-xs-3">Name</label>
+              <div class="col-xs-9">
+                <input id="user-name" name="user-name" type="text" class="form-control" value="{{ Auth::user()->name }}">
               </div>
-            @endif
+            </div>
+
+            <div class="form-group">
+              <label for="user-company-name" class="control-label col-xs-3">Company Name</label>
+              <div class="col-xs-9">
+                <input id="user-company-name" name="user-company-name" type="text" class="form-control" value="{{ Auth::user()->company_name }}">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="user-company-address" class="control-label col-xs-3">Company Address</label>
+              <div class="col-xs-9">
+                <textarea id="user-company-address" rows="4" name="user-company-address" type="text" class="form-control">{{ Auth::user()->company_address }}</textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="user-email" class="control-label col-xs-3">E-Mail</label>
+              <div class="col-xs-9">
+                <input id="user-email" name="user-email" type="text" class="form-control" value="{{ Auth::user()->email }}">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="user-phone-cell" class="control-label col-xs-3">Telephone (HP)</label>
+              <div class="col-xs-3">
+                <input id="user-phone-cell" name="user-phone-cell" type="text" class="form-control" value="{{ Auth::user()->phone_cell }}">
+              </div>
+              <label for="user-phone-office" class="control-label col-xs-3">Telephone (Office)</label>
+              <div class="col-xs-3">
+                <input id="user-phone-office" name="user-phone-office" type="text" class="form-control" value="{{ Auth::user()->phone_office }}">
+              </div>
+            </div>
+
+            <hr>
+            <div class="form-group">
+              <div class="col-xs-3 col-xs-offset-9">
+                <button class="btn btn-primary disabled">Update Profile</button>
+              </div>
+            </div>
+
           </form>
         </div>
       </div>

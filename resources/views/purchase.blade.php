@@ -88,7 +88,7 @@
                   <option value="Promotion Booth">Promotion Booth</option>
                   <option value="Religious Activity">Religious Activity</option>
                   <option value="Dumpster">Dumpster</option>
-                  <option value="Something else">Something else</option>
+                  <option value="Others">Others</option>
                 </select>
               </div>
             </div>
@@ -96,14 +96,14 @@
             <div class="form-group">
               <label for="purchase-location" class="control-label col-xs-2">Location</label>
               <div class="col-xs-10">
-                <input id="purchase-location" name="purchase-location" type="text" class="form-control" required>
+                <input id="purchase-location" name="purchase-location" type="text" class="form-control" required autofocu>
               </div>
             </div>
 
             <div class="form-group">
               <label for="purchase-quantity-lot" class="control-label col-xs-2">No. of Lot</label>
               <div class="col-xs-10">
-                <input id="purchase-quantity-lot" name="purchase-quantity-lot" type="text" class="form-control" required>
+                <input id="purchase-quantity-lot" name="purchase-quantity-lot" type="number" class="form-control" required>
               </div>
             </div>
 
@@ -138,4 +138,9 @@
     </div>
   </div>
 </div>
+@endsection
+
+@section('extrajs')
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+  <script src="/js/purchase.js"></script>
 @endsection
