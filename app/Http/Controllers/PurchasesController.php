@@ -40,7 +40,8 @@ class PurchasesController extends Controller
       $from_at = Carbon::createFromFormat('d/m/Y', $request['start']);
       $until_at = Carbon::createFromFormat('d/m/Y', $request['end']);
       $diff = $until_at->diffInDays($from_at);
-      $total_price = ($diff + 1) * $product->price;
+      $quantity_lot = $request['purchase-quantity-lot'];
+      $total_price = ($diff + 1) * $product->price * $quantity_lot;
 
       // create new purchase collection
       $purchase = new Purchase;
