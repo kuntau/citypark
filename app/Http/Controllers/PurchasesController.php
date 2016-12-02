@@ -11,6 +11,11 @@ use Carbon\Carbon;
 
 class PurchasesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(User $user) {
       // $purchases = Purchase::all();
       $purchases = $user->purchases;
