@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->boolean('is_admin')->default(false);
             $table->boolean('is_superadmin')->default(false);
             $table->boolean('is_root')->default(false);
-            $table->integer('organization')->default(1);
+            $table->integer('organization_id')->default(1);
             $table->string('company_name');
             $table->text('company_address');
             $table->string('phone_office')->nullable();
