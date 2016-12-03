@@ -21,8 +21,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', 'HomeController@index');
 
+// user routes
 Route::get('/profile/{user?}', 'UsersController@profile');
 Route::get('/users', 'UsersController@index');
+Route::post('/users', 'UsersController@edit');
 
 Route::get('/products/{id?}', 'ProductsController@index');
 

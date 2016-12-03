@@ -29,6 +29,10 @@ class UsersController extends Controller
     return view('users.profile', compact('user'));
   }
 
+  public function edit(Request $request) {
+    return $request->all();
+  }
+
   public function create() {
     return view('users.create');
   }

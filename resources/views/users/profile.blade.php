@@ -7,8 +7,9 @@
       <div class="panel panel-default">
         <div class="panel-heading">Profile</div>
         <div class="panel-body">
-          <form class="form-horizontal">
+          <form method="POST" action="{{ url('/users') }}" class="form-horizontal">
 
+            {{ csrf_field() }}
             <div class="form-group">
               <label for="user-name" class="control-label col-xs-3">Name</label>
               <div class="col-xs-9">
@@ -51,7 +52,7 @@
             <hr>
             <div class="form-group">
               <div class="col-xs-3 col-xs-offset-9">
-                <button class="btn btn-primary" disabled="disabled">Update Profile</button>
+                <button class="btn btn-primary" >Update Profile</button>
               </div>
             </div>
 

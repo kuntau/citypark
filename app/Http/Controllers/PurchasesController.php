@@ -12,8 +12,7 @@ use Carbon\Carbon;
 
 class PurchasesController extends Controller
 {
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('auth');
     }
 
@@ -62,7 +61,6 @@ class PurchasesController extends Controller
     }
 
     public function history(User $user) {
-      // $purchases = Purchase::all();
       $purchases = $user->purchases;
 
       return view('applications', compact('purchases'));
