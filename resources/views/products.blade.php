@@ -4,7 +4,7 @@
 <div class="products container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h2>Products</h2>
+            <h2>Pricings</h2>
             <ul class="list-group">
               @foreach ($products as $product)
                 <li class="list-group-item">

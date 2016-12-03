@@ -37,8 +37,8 @@ class PurchasesController extends Controller
       $user = Auth::user();
 
       // prepare the data for purchase collection
-      $from_at = Carbon::createFromFormat('d/m/Y', $request['start']);
-      $until_at = Carbon::createFromFormat('d/m/Y', $request['end']);
+      $from_at = Carbon::createFromFormat('d/m/y', $request['start']);
+      $until_at = Carbon::createFromFormat('d/m/y', $request['end']);
       $diff = $until_at->diffInDays($from_at);
       $quantity_lot = $request['purchase-quantity-lot'];
       $total_price = ($diff + 1) * $product->price * $quantity_lot;
@@ -64,6 +64,8 @@ class PurchasesController extends Controller
     public function history(User $user) {
       // $purchases = Purchase::all();
       $purchases = $user->purchases;
+
+      return view('applications', compact('purchases'));
       return $purchases;
     }
 }

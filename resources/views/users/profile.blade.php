@@ -51,7 +51,7 @@
             <hr>
             <div class="form-group">
               <div class="col-xs-3 col-xs-offset-9">
-                <button class="btn btn-primary disabled">Update Profile</button>
+                <button class="btn btn-primary" disabled="disabled">Update Profile</button>
               </div>
             </div>
 

@@ -7,25 +7,29 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-  public function __construct()
-  {
+  public function __construct() {
     $this->middleware('auth');
   }
 
-  public function index()
+  /**
+   * display user data
+   *
+   * @return void
+   */
+  public function store(User $user)
   {
+    return null;
+  }
+
+  public function index() {
     return view('users.index');
   }
 
-  public function profile(User $user)
-  {
-    // return $user;
+  public function profile(User $user) {
     return view('users.profile', compact('user'));
-    // return view('users.profile')->with('user', $theUser->name);
   }
 
-  public function create()
-  {
+  public function create() {
     return view('users.create');
   }
 }
