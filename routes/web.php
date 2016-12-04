@@ -24,7 +24,7 @@ Route::get('/dashboard', 'HomeController@index');
 // user routes
 Route::get('/profile/{user?}', 'UsersController@profile');
 Route::get('/users', 'UsersController@index');
-Route::post('/users', 'UsersController@edit');
+Route::post('/users', 'UsersController@update');
 
 Route::get('/products/{id?}', 'ProductsController@index');
 
