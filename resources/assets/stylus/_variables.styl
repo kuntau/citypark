@@ -1,7 +1,15 @@
 
+$gray-base =           #000
+$gray-darker =         lighten($gray-base, 13.5) // #222
+$gray-dark =           lighten($gray-base, 20)   // #333
+$gray =                lighten($gray-base, 33.5) // #555
+$gray-light =          lighten($gray-base, 46.7) // #777
+$gray-lighter =        lighten($gray-base, 93.5) // #eee
 
 // Body
-$body-bg = #f5f8fa
+// $body-bg = #f5f8fa
+// $body-bg = #e5e9ec
+$body-bg = #fff
 
 // Borders
 $laravel-border-color = darken($body-bg, 10%)
@@ -21,10 +29,16 @@ $brand-danger = #bf5329
 $font-family-sans-serif = "Roboto", sans-serif
 $font-size-base = 14px
 $line-height-base = 1.6
-$text-color = #636b6f
+// $text-color = #636b6f
+$text-color = $gray-dark
 
 // Navbar
-$navbar-default-bg = #fff
+$navbar-height = 60px
+$navbar-default-bg = #f8f8f8
+$navbar-default-bg = #ff6
+// $navbar-default-color = #ff6a00
+// $navbar-default-link-color = #d9d7ce
+// $navbar-default-link-hover-color = #fff
 
 // Buttons
 $btn-default-color = $text-color
@@ -35,4 +49,4 @@ $input-border-focus = lighten($brand-primary, 25%)
 $input-color-placeholder = lighten($text-color, 30%)
 
 // Panels
-$panel-default-heading-bg = #fff
+$panel-default-heading-bg = #f8f8f8
