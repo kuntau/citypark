@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Purchase extends Model
 {
@@ -20,5 +21,10 @@ class Purchase extends Model
   public function users()
   {
     return $this->belongsTo(User::class);
+  }
+
+  public function setFromAtAttribute($date) {
+    $this->attributes['from_at'] = Carbon::parse($date);
+    // $this->attributes['from_at'] = Carbon\Carbon::createFromFormat('d-m-Y', $date);
   }
 }

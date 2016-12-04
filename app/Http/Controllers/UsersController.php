@@ -33,6 +33,12 @@ class UsersController extends Controller
     return $request->all();
   }
 
+  public function update(Request $request) {
+    $user = $request->user();
+    $user->update($request);
+    return view('home');
+  }
+
   public function create() {
     return view('users.create');
   }

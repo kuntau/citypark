@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h2>Application Form</h2>
-      <div class="panel panel-default">
+      <div class="panel panel-primary">
         <div class="panel-heading" data-toggle="collapse" data-target="#customer-details-body">
           <div class="panel-title">Customer Details</div>
         </div>
@@ -64,6 +64,7 @@
           <form method="POST" action="{{ url('/purchase') }}" class="form-horizontal">
             {{ csrf_field() }}
             <input type="hidden" name="product_id" value="{{ $product->id }}">
+            <input type="hidden" id="duration" name="duration" value="1">
             <div class="form-group">
               <label for="product-title" class="control-label col-xs-2">Product</label>
               <div class="col-xs-10">
@@ -72,19 +73,19 @@
             </div>
 
             <div class="form-group">
-              <label for="product-price" class="control-label col-xs-2">Rate</label>
+              <label for="base-price" class="control-label col-xs-2">Rate</label>
               <div class="col-xs-10">
                 <div class="input-group">
                   <div class="input-group-addon">RM</div>
-                  <input type="text" id="product-price" name="product-price" class="form-control" value="{{ $product->price }}" readonly>
+                  <input type="text" id="base-price" class="form-control" value="{{ $product->price }}" readonly>
                 </div>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="purchase-purpose" class="control-label col-xs-2">Purpose</label>
+              <label for="purpose" class="control-label col-xs-2">Purpose</label>
               <div class="col-xs-10">
-                <select id="purchase-purpose" name="purchase-purpose" class="form-control">
+                <select id="purpose" name="purpose" class="form-control">
                   <option value="Promotion Booth">Promotion Booth</option>
                   <option value="Religious Activity">Religious Activity</option>
                   <option value="Dumpster">Dumpster</option>
@@ -94,16 +95,16 @@
             </div>
 
             <div class="form-group">
-              <label for="purchase-location" class="control-label col-xs-2">Location</label>
+              <label for="location" class="control-label col-xs-2">Location</label>
               <div class="col-xs-10">
-                <input id="purchase-location" name="purchase-location" type="text" class="form-control" required autofocus>
+                <input id="location" name="location" type="text" class="form-control" value="wangsa maju" required autofocus>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="purchase-quantity-lot" class="control-label col-xs-2">No. of Lot</label>
+              <label for="quantity_lot" class="control-label col-xs-2">No. of Lot</label>
               <div class="col-xs-10">
-                <input id="purchase-quantity-lot" name="purchase-quantity-lot" type="number" class="form-control" required>
+                <input id="quantity_lot" name="quantity_lot" type="number" class="form-control" value="2" required>
               </div>
             </div>
 
@@ -111,19 +112,19 @@
               <label for="datepicker" class="control-label col-xs-2">Date</label>
               <div class="col-xs-10">
                 <div id="datepicker" class="input-daterange input-group">
-                  <input class="input-sm form-control" type="text" name="start" id="start" required>
+                  <input class="input-sm form-control" type="text" name="from_at" id="from_at" value="{{ date('d/m/Y')}}" required>
                   <span class="input-group-addon">~</span>
-                  <input class="input-sm form-control" type="text" name="end" id="end" required>
+                  <input class="input-sm form-control" type="text" name="until_at" id="until_at" value="{{ date('d/m/Y')}}" required>
                 </div>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="total-price" class="control-label col-xs-2">Total</label>
+              <label for="price" class="control-label col-xs-2">Total</label>
               <div class="col-sm-3">
                 <div class="input-group">
                   <div class="input-group-addon">RM</div>
-                  <input type="text" id="total-price" name="total-price" class="form-control" value="{{ $product->price }}" readonly>
+                  <input type="text" id="price" name="price" class="form-control" value="{{ $product->price }}" readonly>
                 </div>
               </div>
             </div>
