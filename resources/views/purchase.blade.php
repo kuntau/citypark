@@ -6,11 +6,11 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h2>Application Form</h2>
-      <div class="panel panel-info">
-        <div class="panel-heading">
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-target="#customer-details-body">
           <div class="panel-title">Customer Details</div>
         </div>
-        <div class="panel-body">
+        <div class="panel-body collapse" id="customer-details-body">
           <form class="form-horizontal">
 
             <div class="form-group">
