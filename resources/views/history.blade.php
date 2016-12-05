@@ -4,8 +4,11 @@
 <div class="products container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h2>Applications History</h2>
+      <h2>History</h2>
       <ul class="list-group">
+      @if (!count($purchases))
+        <p>You don't have any purchase yet. Make one!</p>
+      @endif
         @foreach ($purchases as $appl)
           <li class="list-group-item">
             <h3>{{ $appl->location }}</h3>

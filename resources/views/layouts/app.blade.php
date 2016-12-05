@@ -52,7 +52,7 @@
               <li><a href="{{ url('/products') }}">Pricings</a></li>
               @if (Auth::user())
               <li><a href="{{ url('/purchase/1') }}">Purchase</a></li>
-              <li><a href="{{ url('/history') }}">Purchase History</a></li>
+              <li><a href="{{ url('/history') }}">History</a></li>
               @endif
             </ul>
             <!-- Right Side Of Navbar -->
