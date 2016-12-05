@@ -16,7 +16,8 @@
             <table class="table">
               <tr>
                 <td>Date</td>
-                <td>{{ date('d/m/Y', strtotime($appl->from_at)).' ~ '.date('d/m/Y', strtotime($appl->until_at)) }}</td>
+                {{-- <td>{{ date('d/m/Y', strtotime($appl->from_at)).' ~ '.date('d/m/Y', strtotime($appl->until_at)) }}</td> --}}
+                <td>{{ $appl->from_at->format('d/m/Y').' ~ '.$appl->until_at->format('d/m/Y') }}</td>
               </tr>
               <tr>
                 <td>No of Lot</td>

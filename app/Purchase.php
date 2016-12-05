@@ -18,13 +18,24 @@ class Purchase extends Model
     'duration'
   ];
 
-  public function users()
-  {
-    return $this->belongsTo(User::class);
+  protected $dates = [
+    'from_at',
+    'until_at'
+  ];
+
+  public function users() {
+    return $this->belongsToMany(User::class);
+  }
+
+  public function product() {
+    return $this->hasOne(Product::class);
   }
 
   public function setFromAtAttribute($date) {
-    $this->attributes['from_at'] = Carbon::parse($date);
-    // $this->attributes['from_at'] = Carbon\Carbon::createFromFormat('d-m-Y', $date);
+    $this->attributes['from_at'] = Carbon::createFromFormat('d/m/Y', $date);
+  }
+
+  public function setUntilAtAttribute($date) {
+    $this->attributes['until_at'] = Carbon::createFromFormat('d/m/Y', $date);
   }
 }
