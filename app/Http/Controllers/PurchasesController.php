@@ -67,10 +67,10 @@ class PurchasesController extends Controller
       return redirect()->action('PurchasesController@history');
     }
 
-    public function history() {
+    public function history(User $user) {
       $purchases = \Auth::user()->purchases;
 
+      // return compact('purchases');
       return view('applications', compact('purchases'));
-      return $purchases;
     }
 }

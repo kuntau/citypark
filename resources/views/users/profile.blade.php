@@ -11,41 +11,41 @@
 
             {{ csrf_field() }}
             <div class="form-group">
-              <label for="user-name" class="control-label col-xs-3">Name</label>
+              <label for="name" class="control-label col-xs-3">Name</label>
               <div class="col-xs-9">
-                <input id="user-name" name="user-name" type="text" class="form-control" value="{{ Auth::user()->name }}">
+                <input id="name" name="name" type="text" class="form-control" value="{{ Auth::user()->name }}">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="user-company-name" class="control-label col-xs-3">Company Name</label>
+              <label for="company_name" class="control-label col-xs-3">Company Name</label>
               <div class="col-xs-9">
-                <input id="user-company-name" name="user-company-name" type="text" class="form-control" value="{{ Auth::user()->company_name }}">
+                <input id="company_name" name="company_name" type="text" class="form-control" value="{{ Auth::user()->company_name }}">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="user-company-address" class="control-label col-xs-3">Company Address</label>
+              <label for="company_address" class="control-label col-xs-3">Company Address</label>
               <div class="col-xs-9">
-                <textarea id="user-company-address" rows="4" name="user-company-address" type="text" class="form-control">{{ Auth::user()->company_address }}</textarea>
+                <textarea id="company_address" rows="4" name="company_address" type="text" class="form-control">{{ Auth::user()->company_address }}</textarea>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="user-email" class="control-label col-xs-3">E-Mail</label>
+              <label for="email" class="control-label col-xs-3">E-Mail</label>
               <div class="col-xs-9">
-                <input id="user-email" name="user-email" type="text" class="form-control" value="{{ Auth::user()->email }}">
+                <input id="email" name="email" type="text" class="form-control" value="{{ Auth::user()->email }}">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="user-phone-cell" class="control-label col-xs-3">Telephone (HP)</label>
+              <label for="phone_cell" class="control-label col-xs-3">Telephone (HP)</label>
               <div class="col-xs-3">
-                <input id="user-phone-cell" name="user-phone-cell" type="text" class="form-control" value="{{ Auth::user()->phone_cell }}">
+                <input id="phone_cell" name="phone_cell" type="text" class="form-control" value="{{ Auth::user()->phone_cell }}">
               </div>
-              <label for="user-phone-office" class="control-label col-xs-3">Telephone (Office)</label>
+              <label for="phone_office" class="control-label col-xs-3">Telephone (Office)</label>
               <div class="col-xs-3">
-                <input id="user-phone-office" name="user-phone-office" type="text" class="form-control" value="{{ Auth::user()->phone_office }}">
+                <input id="phone_office" name="phone_office" type="text" class="form-control" value="{{ Auth::user()->phone_office }}">
               </div>
             </div>
 

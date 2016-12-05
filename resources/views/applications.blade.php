@@ -8,8 +8,8 @@
       <ul class="list-group">
         @foreach ($purchases as $appl)
           <li class="list-group-item">
-            <h3>{{ $appl->purpose }}</h3>
-            <h4>{{ $appl->location }}</h4>
+            <h3>{{ $appl->location }}</h3>
+            <h4>{{ $appl->purpose }}</h4>
             <table class="table">
               <tr>
                 <td>Date</td>

@@ -34,8 +34,8 @@ class UsersController extends Controller
   }
 
   public function update(Request $request) {
-    $user = $request->user();
-    $user->update($request);
+    // $user = $request->user();
+    $request->user()->update($request->all());
     return view('home');
   }
 
