@@ -10,6 +10,6 @@ class Product extends Model
 
     public function purchases()
     {
-      return $this->belongsToMany(Purchase::class);
+      return $this->hasMany(Purchase::class);
     }
 }
