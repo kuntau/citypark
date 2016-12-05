@@ -104,8 +104,12 @@
   <!-- Dev livereload -->
   @if ( Config::get('app.debug') )
   <script type="text/javascript">
-    document.write('<script src="//localhost:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
-  </script>
+  var url = '<script src=\"//'
+          + window.location.hostname
+          + ':35729\/livereload.js?snipver=1\" type=\"text/javascript\"><\/script>';
+  document.write(url);
+</script>
+
   @endif
 </body>
 </html>
