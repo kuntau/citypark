@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h2>Application Form</h2>
-      <div class="panel panel-primary">
+      <div class="panel panel-default">
         <div class="panel-heading" data-toggle="collapse" data-target="#customer-details-body">
           <div class="panel-title">Customer Details</div>
         </div>
@@ -56,7 +56,7 @@
         </div> <!-- end panel body -->
       </div> <!-- end panel -->
 
-      <div class="panel panel-primary">
+      <div class="panel panel-default">
         <div class="panel-heading" data-toggle="collapse" data-target="#rental-details-body">
           <div class="panel-title">Rental Details</div>
         </div>

@@ -57,9 +57,6 @@
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-              @if (Auth::user())
-              <li><a href="{{ url('/admin') }}">Admin</a></li>
-              @endif
               <!-- Authentication Links -->
               @if (Auth::guest())
               <li><a href="{{ url('/login') }}">Login</a></li>
