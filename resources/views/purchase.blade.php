@@ -10,7 +10,7 @@
         <div class="panel-heading" data-toggle="collapse" data-target="#customer-details-body">
           <div class="panel-title">Customer Details</div>
         </div>
-        <div class="panel-body collapse" id="customer-details-body">
+        <div class="panel-body collapse in" id="customer-details-body">
           <form class="form-horizontal">
 
             <div class="form-group">
@@ -57,10 +57,10 @@
       </div> <!-- end panel -->
 
       <div class="panel panel-primary">
-        <div class="panel-heading">
+        <div class="panel-heading" data-toggle="collapse" data-target="#rental-details-body">
           <div class="panel-title">Rental Details</div>
         </div>
-        <div class="panel-body">
+        <div id="rental-details-body" class="panel-body collapse in">
           <form method="POST" action="{{ url('/purchase') }}" class="form-horizontal">
             {{ csrf_field() }}
             <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -97,14 +97,14 @@
             <div class="form-group">
               <label for="location" class="control-label col-xs-2">Location</label>
               <div class="col-xs-10">
-                <input id="location" name="location" type="text" class="form-control" value="wangsa maju" required autofocus>
+                <input id="location" name="location" type="text" class="form-control" value="Wangsa Maju" required autofocus>
               </div>
             </div>
 
             <div class="form-group">
               <label for="quantity_lot" class="control-label col-xs-2">No. of Lot</label>
               <div class="col-xs-10">
-                <input id="quantity_lot" name="quantity_lot" type="number" class="form-control" value="2" required>
+                <input id="quantity_lot" name="quantity_lot" type="number" class="form-control" value="1" required>
               </div>
             </div>
 
